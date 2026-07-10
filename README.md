@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📄 DocPilot AI
 
-## Getting Started
+**DocPilot AI** is an intelligent document assistant that enables users to upload PDF documents, ask natural language questions, and receive accurate, context-aware answers with transparent source citations. The application combines Retrieval-Augmented Generation (RAG), semantic search, and AI-powered reranking to provide reliable and explainable responses.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 📄 Upload and process PDF documents
+- 💬 Ask questions in natural language
+- 🧠 AI-powered Retrieval-Augmented Generation (RAG)
+- 🔍 Semantic search using vector embeddings
+- 🎯 Cross-Encoder reranking for improved retrieval accuracy
+- 📑 Transparent source citations
+- 📊 Evaluation dashboard with document and chunk statistics
+- ⚡ Fast and responsive user interface
+- 🌙 Modern dark-themed design
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js
+- React
+- JavaScript
+- CSS
+
+### Backend
+- FastAPI
+- Python
+
+### AI & Machine Learning
+- Sentence Transformers
+- Cross Encoder Reranker
+- ChromaDB
+- LangChain Text Splitters
+
+### Other Tools
+- pdfplumber
+- Uvicorn
+
+---
+
+## 📂 Project Structure
+
+```
+DocPilot-AI/
+│
+├── app/                 # Next.js frontend
+├── services/            # Frontend API services
+├── public/
+│
+├── docpilot-ai/
+│   ├── routes/
+│   ├── services/
+│   ├── vector_store/
+│   ├── app.py
+│   └── requirements.txt
+│
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Clone the repository
 
-## Learn More
+```bash
+git clone https://github.com/Mohnish448/DocPilot-AI.git
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend
 
-## Deploy on Vercel
+```bash
+cd docpilot-ai
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+python -m venv venv
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Windows
+venv\Scripts\activate
+
+pip install -r requirements.txt
+
+python -m uvicorn app:app --reload
+```
+
+---
+
+## 📖 How It Works
+
+1. Upload a PDF document.
+2. The document is parsed into chunks.
+3. Text embeddings are generated.
+4. Chunks are stored in ChromaDB.
+5. User questions are converted into embeddings.
+6. Relevant chunks are retrieved using semantic similarity.
+7. Results are reranked using a Cross Encoder.
+8. The AI generates an answer with transparent citations.
+
+---
+
+## 📸 Screenshots
+
+> Screenshots of the application will be added soon.
+
+---
+
+## 🎯 Future Improvements
+
+- Multi-user session memory
+- Conversation history
+- Multiple document collections
+- Export chat history
+- OCR support for scanned PDFs
+- Progressive Web App (PWA)
+- Cloud deployment
+
+---
+
+## 👨‍💻 Developer
+
+**Mohnish**
+
+- LinkedIn: https://www.linkedin.com/in/mohnish448/
+- GitHub: https://github.com/Mohnish448
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+© 2026 Mohnish. All rights reserved.

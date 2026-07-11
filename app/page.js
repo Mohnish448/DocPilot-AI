@@ -746,21 +746,23 @@ useEffect(() => {
               }}
               className="rounded-xl bg-[#111] border border-white/10 p-4"
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-white font-semibold truncate">
+                    {src.pdf}
+                  </h3>
+                </div>
 
-    <h3 className="text-white font-semibold">
-        {src.pdf}
-    </h3>
-
-    <span className="px-2 py-1 rounded-full bg-[#232323] text-xs text-green-400">
-        {src.similarity >= 85
-            ? "High Confidence"
-            : src.similarity >= 70
-            ? "Medium Confidence"
-            : "Low Confidence"}
-    </span>
-
-</div>
+                <div className="flex-shrink-0">
+                  <span className="px-2 py-1 rounded-full bg-[#232323] text-xs text-green-400 whitespace-nowrap">
+                    {src.similarity >= 85
+                      ? "High Confidence"
+                      : src.similarity >= 70
+                      ? "Medium Confidence"
+                      : "Low Confidence"}
+                  </span>
+                </div>
+              </div>
 
               {/* We'll replace these placeholders with real values next */}
               <div className="space-y-3 text-sm">

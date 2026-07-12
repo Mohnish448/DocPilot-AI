@@ -40,7 +40,9 @@ async def upload_pdf(file: UploadFile = File(...)):
     file.filename
 )
 
-    
+# Delet uploaded PDF after processing 
+if os.path.exists(file_path):
+    os.remove(file_path)
 
     return {
         "status": "success",

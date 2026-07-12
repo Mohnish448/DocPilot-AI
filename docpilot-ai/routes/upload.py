@@ -38,11 +38,11 @@ async def upload_pdf(file: UploadFile = File(...)):
     paragraphs,
     embeddings,
     file.filename
-)
+    )
 
-# Delet uploaded PDF after processing 
-if os.path.exists(file_path):
-    os.remove(file_path)
+    # Delet uploaded PDF after processing 
+    if os.path.exists(file_path):
+        os.remove(file_path)
 
     return {
         "status": "success",
